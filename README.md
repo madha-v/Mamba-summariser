@@ -56,3 +56,22 @@ pip install -r requirements.txt
 
 # Run the API server
 uvicorn app.main:app --reload --port 8000
+
+
+
+
+
+The backend will be live at http://localhost:8000. You can view the interactive API docs at http://localhost:8000/docs.2. Frontend Setup (Coming Soon)Once the frontend directory is established, run the following commands to spin up the UI:Bashcd frontend
+npm install
+npm run dev
+The React workspace will be accessible at http://localhost:3000 or http://localhost:5173.📡
+ Core API EndpointsMethodEndpointDescription
+GET/api/v1/healthSystem operational health check.
+POST/api/v1/uploadUploads a document, extracts text, generates embeddings, and returns a summary.
+POST/api/v1/chatQueries the vector database to answer questions specifically grounded in the uploaded document.
+
+🧠 Why Mamba?Standard Transformers scale quadratically ($O(N^2)$) with sequence length, making long documents computationally expensive. State Space Models like Mamba scale linearly ($O(N)$), providing equivalent or superior reasoning capabilities while using a fraction of the memory.
+
+This allows MambaDoc AI to process 500+ page PDFs quickly and efficiently on consumer hardware.
+
+📝 LicenseThis project is licensed under the MIT License - see the LICENSE file for details.
